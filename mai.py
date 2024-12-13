@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask, url_for, render_template
 
 #inicializacao
 app =Flask(__name__)
@@ -7,7 +7,7 @@ app =Flask(__name__)
 #rota
 @app.route('/')
 def ola_mundo():
-    return f"<a href='{url_for('pagina_sobre')}'>pagina sobre<a>"
+    return render_template("index.html")
 
 @app.route('/sobre')
 def pagina_sobre():
